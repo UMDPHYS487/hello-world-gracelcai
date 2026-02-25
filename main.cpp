@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+#include <bitset>
 using namespace std;
 
 int factorial(int num) {
@@ -46,4 +48,30 @@ int main() {
     cout << *x << "\n";
     y = 20;
     cout << *x << "\n";
+
+    // ex 7
+    cout << "Please enter a value: ";
+    cin >> number;
+    switch(number % 2) {
+        case 1:
+            cout << float(number) / 2 << "\n";
+        default:
+            if (number < 10) {
+                cout << std::pow(number, 2) << "\n";
+            } else {
+                cout << "hahaha\n";
+            }
+    }
+
+    // ex 8
+    bitset<8> b{0b01110010};
+    cout << b << " (initial value)\n";
+    // for (; b.any(); b >>= 1) {
+    //     while (!b.test(0))
+    //         b >>= 1;
+    //     cout << b << "\n";
+    // }
+
+    b ^= 0b11111111;
+    cout << b << " (final value)\n";
 }
